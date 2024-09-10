@@ -29,4 +29,4 @@ Os dados inseridos no formulário são armazenados em um banco de dados SQLite l
 1. **Clone o repositório**:
 
    ```sh
-   git clone https://github.com/seu_usuario/app_cadastro_goiais.git
+   git clone https://github.com/MatheusMed/app_secretaria_do_estado_de_goias_case
