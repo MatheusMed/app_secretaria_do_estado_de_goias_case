@@ -1,5 +1,3 @@
-# app_cadastro_goiais
-
 Bem-vindo ao ! Este é um projeto de exemplo desenvolvido com Flutter, que demonstra um formulário de cadastro simples. O projeto utiliza o banco de dados `sqflite` para armazenar os dados localmente no dispositivo.
 
 ## Descrição
