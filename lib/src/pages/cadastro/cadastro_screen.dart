@@ -1,9 +1,10 @@
 import 'package:app_cadastro_goiais/src/models/cadastro_model.dart';
+import 'package:app_cadastro_goiais/src/utils/text_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../controllers/cadastro_controller.dart';
-import '../../utils/cpf_input_mask.dart'; // Para formatação de data
+import '../../utils/cpf_input_mask.dart';
 
 class CadastroScreen extends StatefulWidget {
   const CadastroScreen({super.key});
@@ -49,60 +50,33 @@ class _CadastroScreenState extends State<CadastroScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              TextFormField(
+              TextFormWidget(
                 controller: loginController,
-                decoration: const InputDecoration(
-                  labelText: 'Login',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o login';
-                  }
-                  return null;
-                },
+                labelText: 'Login',
               ),
               const SizedBox(height: 16.0),
               ValueListenableBuilder(
                   valueListenable: cadastroController.osbcureText,
                   builder: (context, osbcure, _) {
-                    return TextFormField(
+                    return TextFormWidget(
                       controller: senhaController,
+                      labelText: 'Senha',
                       obscureText: osbcure,
-                      decoration: InputDecoration(
-                        labelText: 'Senha',
-                        border: const OutlineInputBorder(),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            cadastroController.osbcureText.value =
-                                !cadastroController.osbcureText.value;
-                          },
-                          icon: Icon(osbcure
-                              ? Icons.remove_red_eye
-                              : Icons.visibility_off_sharp),
-                        ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          cadastroController.osbcureText.value =
+                              !cadastroController.osbcureText.value;
+                        },
+                        icon: Icon(osbcure
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off_sharp),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Por favor, insira a senha';
-                        }
-                        return null;
-                      },
                     );
                   }),
               const SizedBox(height: 16.0),
-              TextFormField(
+              TextFormWidget(
                 controller: nomeController,
-                decoration: const InputDecoration(
-                  labelText: 'Nome',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o nome';
-                  }
-                  return null;
-                },
+                labelText: "Nome",
               ),
               const SizedBox(height: 16.0),
               TextFormField(
@@ -125,23 +99,14 @@ class _CadastroScreenState extends State<CadastroScreen> {
                 },
               ),
               const SizedBox(height: 16.0),
-              TextFormField(
+              TextFormWidget(
                 controller: dataNascController,
-                readOnly: true,
-                decoration: InputDecoration(
-                  labelText: 'Data de Nascimento',
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    icon: const Icon(Icons.calendar_today),
-                    onPressed: () => _selectDate(context),
-                  ),
+                isReadOnly: true,
+                labelText: 'Data de Nascimento',
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.calendar_today),
+                  onPressed: () => _selectDate(context),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a data de nascimento';
-                  }
-                  return null;
-                },
               ),
               const SizedBox(height: 16.0),
               const SizedBox(height: 32.0),
