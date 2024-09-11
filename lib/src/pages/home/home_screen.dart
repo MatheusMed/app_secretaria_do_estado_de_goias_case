@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     },
                     child: Text(
-                      "Cadastro",
+                      "Cadastre-se",
                       style: TextStylesUtils.styleButton,
                     ),
                   ),
