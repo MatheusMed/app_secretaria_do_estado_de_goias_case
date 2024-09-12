@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    cadastroController.getAllTasks();
+    cadastroController.getAllUsers();
     super.initState();
   }
 
