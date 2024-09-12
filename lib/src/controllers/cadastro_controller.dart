@@ -10,7 +10,7 @@ class CadastroController {
 
   late Database _database;
 
-  Future<List<CadastroModel>> getAllTasks() async {
+  Future<List<CadastroModel>> getAllUsers() async {
     _database = await ServiceDb.instance.database;
     var aliement = await _database.query('cadastro', orderBy: 'id');
     listaTasks.value = aliement.isNotEmpty
@@ -20,7 +20,7 @@ class CadastroController {
     return listaTasks.value;
   }
 
-  Future<int> addTask(CadastroModel model) async {
+  Future<int> addUser(CadastroModel model) async {
     _database = await ServiceDb.instance.database;
     return await _database.insert('cadastro', model.toMap());
   }

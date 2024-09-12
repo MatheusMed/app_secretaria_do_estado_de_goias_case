@@ -120,7 +120,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                       login: loginController.text,
                       senha: senhaController.text,
                     );
-                    await cadastroController.addTask(modelCadastro);
+                    await cadastroController.addUser(modelCadastro);
                     Navigator.pop(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
