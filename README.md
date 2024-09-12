@@ -1,5 +1,3 @@
-Bem-vindo
-
 ## Descrição
 
 Este aplicativo foi criado para fornecer uma solução básica para cadastro de usuários. Ele inclui um formulário com os seguintes campos:
