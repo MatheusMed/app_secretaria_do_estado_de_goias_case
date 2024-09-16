@@ -6,6 +6,7 @@ class TextFormWidget extends StatelessWidget {
   final Widget? suffixIcon;
   bool obscureText;
   final String? labelText;
+  final String labelError;
   bool isReadOnly;
   TextFormWidget({
     super.key,
@@ -14,6 +15,7 @@ class TextFormWidget extends StatelessWidget {
     this.obscureText = false,
     required this.labelText,
     this.isReadOnly = false,
+    required this.labelError,
   });
 
   @override
@@ -28,7 +30,7 @@ class TextFormWidget extends StatelessWidget {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Por favor, insira a data de nascimento';
+          return 'Por favor, insira $labelError';
         }
         return null;
       },

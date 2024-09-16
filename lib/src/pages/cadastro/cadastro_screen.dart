@@ -16,6 +16,7 @@ class CadastroScreen extends StatefulWidget {
 
 class _CadastroScreenState extends State<CadastroScreen> {
   final cadastroController = CadastroController();
+
   final TextEditingController nomeController = TextEditingController();
   final TextEditingController cpfController = TextEditingController();
   final TextEditingController dataNascController = TextEditingController();
@@ -52,6 +53,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
             children: [
               TextFormWidget(
                 controller: loginController,
+                labelError: "o Login",
                 labelText: 'Login',
               ),
               const SizedBox(height: 16.0),
@@ -60,6 +62,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                   builder: (context, osbcure, _) {
                     return TextFormWidget(
                       controller: senhaController,
+                      labelError: "a Senha",
                       labelText: 'Senha',
                       obscureText: osbcure,
                       suffixIcon: IconButton(
@@ -76,6 +79,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
               const SizedBox(height: 16.0),
               TextFormWidget(
                 controller: nomeController,
+                labelError: "o Nome",
                 labelText: "Nome",
               ),
               const SizedBox(height: 16.0),
@@ -101,6 +105,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
               const SizedBox(height: 16.0),
               TextFormWidget(
                 controller: dataNascController,
+                labelError: "a Data de Nascimento",
                 isReadOnly: true,
                 labelText: 'Data de Nascimento',
                 suffixIcon: IconButton(
