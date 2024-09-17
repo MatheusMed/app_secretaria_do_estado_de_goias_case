@@ -43,14 +43,34 @@ class _CadastroScreenState extends State<CadastroScreen> {
   }
 
   @override
+  void dispose() {
+    nomeController.dispose();
+    cpfController.dispose();
+    dataNascController.dispose();
+    senhaController.dispose();
+    loginController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Cadastro',
           style: TextStylesUtils.titleAppBar,
         ),
         backgroundColor: ColorsStatic.backgroudColor,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: ColorsStatic.whiteColor,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

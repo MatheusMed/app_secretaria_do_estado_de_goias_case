@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text("Bem Vindo", style: TextStylesUtils.titleAppBar),
         backgroundColor: ColorsStatic.backgroudColor,
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

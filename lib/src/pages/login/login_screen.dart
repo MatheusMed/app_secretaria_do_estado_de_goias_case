@@ -26,7 +26,17 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     cadastroController.getAllUsers();
+    loginController.clear();
+    senhaController.clear();
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    loginController.dispose();
+    senhaController.dispose();
+    super.dispose();
   }
 
   @override
