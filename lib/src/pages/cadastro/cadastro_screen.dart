@@ -115,7 +115,6 @@ class _CadastroScreenState extends State<CadastroScreen> {
                   onPressed: () => _selectDate(context),
                 ),
               ),
-              const SizedBox(height: 16.0),
               const SizedBox(height: 32.0),
               ElevatedButton(
                 onPressed: () async {

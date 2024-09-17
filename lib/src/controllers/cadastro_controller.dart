@@ -12,9 +12,9 @@ class CadastroController {
 
   Future<List<CadastroModel>> getAllUsers() async {
     _database = await ServiceDb.instance.database;
-    var aliement = await _database.query('cadastro', orderBy: 'id');
-    listaUsuarios.value = aliement.isNotEmpty
-        ? aliement.map((model) => CadastroModel.fromMap(model)).toList()
+    var cadastro = await _database.query('cadastro', orderBy: 'id');
+    listaUsuarios.value = cadastro.isNotEmpty
+        ? cadastro.map((model) => CadastroModel.fromMap(model)).toList()
         : [];
 
     return listaUsuarios.value;

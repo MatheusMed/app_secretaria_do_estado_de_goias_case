@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 
 import '../../models/cadastro_model.dart';
 
-class LoginScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final CadastroModel cadastroModel;
-  const LoginScreen({super.key, required this.cadastroModel});
+  const HomeScreen({super.key, required this.cadastroModel});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

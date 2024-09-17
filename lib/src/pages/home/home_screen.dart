@@ -1,21 +1,21 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:app_cadastro_goiais/src/controllers/cadastro_controller.dart';
+import 'package:app_cadastro_goiais/src/pages/login/login_screen.dart';
 import 'package:app_cadastro_goiais/src/utils/colors_static.dart';
 import 'package:app_cadastro_goiais/src/utils/text_style_utils.dart';
 import 'package:flutter/material.dart';
 
 import '../cadastro/cadastro_screen.dart';
-import '../login/login_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final cadastroController = CadastroController();
 
   final TextEditingController loginController = TextEditingController();
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => LoginScreen(
+                              builder: (context) => HomeScreen(
                                 cadastroModel: model!,
                               ),
                             ),

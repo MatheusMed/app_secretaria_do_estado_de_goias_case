@@ -14,7 +14,6 @@ class CpfInputFormatter extends TextInputFormatter {
 
     String maskedText = '';
 
-    // Format the CPF number
     if (newText.isNotEmpty) {
       maskedText +=
           newText.substring(0, newText.length > 3 ? 3 : newText.length);

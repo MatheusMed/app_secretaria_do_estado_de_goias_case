@@ -17,24 +17,6 @@ class CadastroModel {
     required this.senha,
   });
 
-  CadastroModel copyWith({
-    int? id,
-    String? nome,
-    String? cpf,
-    String? dataDeNasc,
-    String? login,
-    String? senha,
-  }) {
-    return CadastroModel(
-      id: id ?? this.id,
-      nome: nome ?? this.nome,
-      cpf: cpf ?? this.cpf,
-      dataDeNasc: dataDeNasc ?? this.dataDeNasc,
-      login: login ?? this.login,
-      senha: senha ?? this.senha,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
