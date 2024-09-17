@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 import '../services/service_db.dart';
 
 class CadastroController {
-  final listaTasks = ValueNotifier(<CadastroModel>[]);
+  final listaUsuarios = ValueNotifier(<CadastroModel>[]);
   final osbcureText = ValueNotifier(true);
 
   late Database _database;
@@ -13,11 +13,11 @@ class CadastroController {
   Future<List<CadastroModel>> getAllUsers() async {
     _database = await ServiceDb.instance.database;
     var aliement = await _database.query('cadastro', orderBy: 'id');
-    listaTasks.value = aliement.isNotEmpty
+    listaUsuarios.value = aliement.isNotEmpty
         ? aliement.map((model) => CadastroModel.fromMap(model)).toList()
         : [];
 
-    return listaTasks.value;
+    return listaUsuarios.value;
   }
 
   Future<int> addUser(CadastroModel model) async {
@@ -44,7 +44,7 @@ class CadastroController {
   }
 
   int? obterIdPeloLogin(String login) {
-    CadastroModel? cadastro = listaTasks.value.firstWhere(
+    CadastroModel? cadastro = listaUsuarios.value.firstWhere(
       (cadastro) => cadastro.login == login,
     );
 

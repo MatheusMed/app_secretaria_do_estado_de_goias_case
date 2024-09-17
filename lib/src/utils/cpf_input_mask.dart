@@ -8,19 +8,24 @@ class CpfInputFormatter extends TextInputFormatter {
   ) {
     String newText = newValue.text.replaceAll(RegExp(r'\D'), '');
 
-    // Aplica a máscara
     if (newText.length > 11) {
       newText = newText.substring(0, 11);
     }
+
     String maskedText = '';
+
+    // Format the CPF number
     if (newText.isNotEmpty) {
-      maskedText += newText.substring(0, 3);
+      maskedText +=
+          newText.substring(0, newText.length > 3 ? 3 : newText.length);
     }
     if (newText.length > 3) {
-      maskedText += '.${newText.substring(3, 6)}';
+      maskedText +=
+          '.${newText.substring(3, newText.length > 6 ? 6 : newText.length)}';
     }
     if (newText.length > 6) {
-      maskedText += '.${newText.substring(6, 9)}';
+      maskedText +=
+          '.${newText.substring(6, newText.length > 9 ? 9 : newText.length)}';
     }
     if (newText.length > 9) {
       maskedText += '-${newText.substring(9)}';

@@ -94,10 +94,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ElevatedButton(
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        final login = cadastroController.listaTasks.value.any(
-                            (elemento) =>
-                                elemento.login == loginController.text &&
-                                elemento.senha == senhaController.text);
+                        final listaUser =
+                            await cadastroController.getAllUsers();
+                        final login = listaUser.any((elemento) =>
+                            elemento.login == loginController.text &&
+                            elemento.senha == senhaController.text);
 
                         if (login) {
                           final id = cadastroController
