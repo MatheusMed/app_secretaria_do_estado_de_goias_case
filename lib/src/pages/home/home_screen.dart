@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:app_cadastro_goiais/src/controllers/cadastro_controller.dart';
 import 'package:app_cadastro_goiais/src/utils/colors_static.dart';
 import 'package:app_cadastro_goiais/src/utils/text_style_utils.dart';

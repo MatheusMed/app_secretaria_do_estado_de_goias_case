@@ -23,6 +23,7 @@ class TextFormWidget extends StatelessWidget {
     return TextFormField(
       controller: controller,
       readOnly: isReadOnly,
+      obscureText: obscureText,
       decoration: InputDecoration(
         labelText: labelText,
         border: const OutlineInputBorder(),
