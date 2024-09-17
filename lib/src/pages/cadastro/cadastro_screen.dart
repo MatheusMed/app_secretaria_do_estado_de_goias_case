@@ -1,12 +1,14 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:app_cadastro_goiais/src/models/cadastro_model.dart';
+import 'package:app_cadastro_goiais/src/utils/colors_static.dart';
 import 'package:app_cadastro_goiais/src/utils/text_form_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../controllers/cadastro_controller.dart';
 import '../../utils/cpf_input_mask.dart';
+import '../../utils/text_style_utils.dart';
 
 class CadastroScreen extends StatefulWidget {
   const CadastroScreen({super.key});
@@ -44,7 +46,11 @@ class _CadastroScreenState extends State<CadastroScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cadastro'),
+        title: Text(
+          'Cadastro',
+          style: TextStylesUtils.titleAppBar,
+        ),
+        backgroundColor: ColorsStatic.backgroudColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
